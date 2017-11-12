@@ -4,43 +4,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:padding="20dp"
    >
 
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:weightSum="10"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
-            android:text="购物车"
-            android:id="@+id/trolley"
-
-            />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="7"
-            android:textCursorDrawable="@null"
-            android:hint="搜索"
-
-            />
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:layout_marginRight="3dp"
-            android:background="@drawable/search_logo"
-            />
-    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -106,7 +72,7 @@
                     android:layout_width="80dp"
                     android:layout_height="30dp"
                     android:gravity="center"
-                    android:background="#FFA127"
+                    android:background="@color/themeBlue"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:layout_marginLeft="20dp"
@@ -139,7 +105,7 @@
                     android:layout_toRightOf="@+id/classify2"
                     android:layout_marginLeft="35dp"
                     android:layout_marginTop="15dp"
-                    android:background="#FFA127"
+                    android:background="@color/themeBlue"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:text="装饰品"
@@ -182,7 +148,7 @@
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="15dp"
                         android:text="户外游戏"
-                        android:background="#FFA127"
+                        android:background="@color/themeBlue"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
                         />
@@ -208,7 +174,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="30dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="85dp"
@@ -272,8 +238,7 @@
                 android:paddingBottom="10dp"
                 android:dividerHeight="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
-
+                android:layout_height="wrap_content"
                 />
 
 

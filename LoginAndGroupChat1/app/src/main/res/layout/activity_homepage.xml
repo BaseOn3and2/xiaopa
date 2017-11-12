@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:scrollbars="none"
+    android:padding="20dp"
     tools:context="com.base.xiaopa.activitys.MainActivity">
 
     <LinearLayout
@@ -22,7 +24,7 @@
             app:banner_pointContainerBackground="@android:color/transparent"
             app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
             android:background="@drawable/shape_eidt"
-            app:banner_transitionEffect="rotate"
+            app:banner_transitionEffect="defaultEffect"
             />
         <FrameLayout
             android:layout_marginTop="20dp"

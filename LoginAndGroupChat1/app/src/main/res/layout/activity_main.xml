@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><!--<com.base.xiaopa.view.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:id="@+id/id_menu"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:orientation="vertical"--><!--app:rightPadding="100dp">-->
-
+<?xml version="1.0" encoding="utf-8"?>
+<!--<com.base.xiaopa.view.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:id="@+id/id_menu"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:orientation="vertical"--><!--app:rightPadding="100dp">-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="15">
 
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="#FF7F24"
-        android:orientation="horizontal">
-
+        android:background="@color/themeBlue"
+        android:orientation="horizontal"
+        >
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
@@ -22,35 +21,38 @@
             android:gravity="center"
             android:text="@string/group_chat"
             android:textColor="#fff"
-            android:textSize="23sp" />
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/bt_search"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:src="@drawable/search"
-            android:layout_gravity="right"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="70dp"
             />
 
         <ImageView
             android:id="@+id/bt_add"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/add" />
-    </LinearLayout>
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/add"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="20dp"/>
+    </FrameLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_mf"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="14.0"
-        android:background="@drawable/shape_eidt" />
+       />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:orientation="horizontal"
         android:weightSum="5"
 
@@ -67,8 +69,8 @@
 
             <ImageButton
                 android:id="@+id/id_chat_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:clickable="false" />
 
             <TextView
@@ -89,8 +91,8 @@
 
             <ImageButton
                 android:id="@+id/id_trends_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="#00000000"
                 android:clickable="false" />
 
@@ -114,8 +116,8 @@
             <ImageButton
 
                 android:id="@+id/id_home_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="#00000000"
                 android:clickable="false" />
 
@@ -137,8 +139,8 @@
 
             <ImageButton
                 android:id="@+id/id_mall_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="#00000000"
                 android:clickable="false" />
 
@@ -160,8 +162,8 @@
 
             <ImageButton
                 android:id="@+id/id_me_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="#00000000"
                 android:clickable="false" />
 

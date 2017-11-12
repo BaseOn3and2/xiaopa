@@ -28,6 +28,7 @@
             android:id="@+id/bt_summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/themeBlue"
             android:text="活动简介"
             android:textSize="26sp" />
 

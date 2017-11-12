@@ -14,19 +14,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.base.xiaopa.view.NoScrollViewPager;
-import com.base.xiaopa.view.SearchView;
 import com.base.xiaopa.view.SlidingMenu;
 import com.xiaopa.android.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -64,6 +60,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         list.add(new TrendsActivity());
         list.add(new HomeActivity());
         list.add(new StoreActivity());
+        list.add(new MeActivity());
         mSearch = (ImageView) findViewById(R.id.bt_search);
         mAdd =(ImageView)findViewById(R.id.bt_add);
         mTitle =(TextView)findViewById(R.id.tv_title);
@@ -94,15 +91,16 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                    resetImg();
                     mSearch.setVisibility(View.VISIBLE);
                     mAdd.setVisibility(View.VISIBLE);
+                    mAdd.setImageResource(R.drawable.add);
                     mTitle.setText("群聊");
-                    mGroupChatImg.setBackgroundResource(R.drawable.chat_orange);
+                    mGroupChatImg.setBackgroundResource(R.drawable.chat_blue);
                 }else if(vp_pager.getCurrentItem()==1)
                 {
                     resetImg();
                     mSearch.setVisibility(View.GONE);
                     mAdd.setVisibility(View.GONE);
                     mTitle.setText("动态");
-                    mTrendsImg.setBackgroundResource(R.drawable.trends_orange);
+                    mTrendsImg.setBackgroundResource(R.drawable.trends_blue);
 
                 }else if(vp_pager.getCurrentItem()==2)
                 {
@@ -110,22 +108,22 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                     mSearch.setVisibility(View.GONE);
                     mAdd.setVisibility(View.GONE);
                     mTitle.setText("主页");
-                    mHomePageImg.setBackgroundResource(R.drawable.home_orange);
+                    mHomePageImg.setBackgroundResource(R.drawable.home_blue);
 
                 }else  if(vp_pager.getCurrentItem()==3)
                 {
                     resetImg();
                     mSearch.setVisibility(View.VISIBLE);
-                    mAdd.setVisibility(View.GONE);
+                    mAdd.setImageResource(R.drawable.mall_grey);
                     mTitle.setText("商城");
-                    mMallImg.setBackgroundResource(R.drawable.mall_orange);
+                    mMallImg.setBackgroundResource(R.drawable.mall_blue);
 
                 }else  if(vp_pager.getCurrentItem()==4){
                     resetImg();
                     mSearch.setVisibility(View.GONE);
                     mAdd.setVisibility(View.GONE);
-                    mTitle.setText("我的4");
-                    mMeImg.setBackgroundResource(R.drawable.me_orange);
+                    mTitle.setText("我的");
+                    mMeImg.setBackgroundResource(R.drawable.me_blue);
                 }
 
 
@@ -160,10 +158,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void resetImg()
     {
 
-        mHomePageImg.setBackgroundResource(R.drawable.home_grey);
-        mTrendsImg.setBackgroundResource(R.drawable.trends_grey);
-        mMallImg.setBackgroundResource(R.drawable.mall_grey);
-        mMeImg.setBackgroundResource(R.drawable.me_grey);
-        mGroupChatImg.setBackgroundResource(R.drawable.chat_grey);
+        mHomePageImg.setBackgroundResource(R.drawable.home_black);
+        mTrendsImg.setBackgroundResource(R.drawable.trends_black);
+        mMallImg.setBackgroundResource(R.drawable.mall_black);
+        mMeImg.setBackgroundResource(R.drawable.me_black);
+        mGroupChatImg.setBackgroundResource(R.drawable.chat_black);
     }
 }

@@ -135,15 +135,15 @@ public class StoreActivity extends Fragment {
 
         /******End******/
 
-        trolley= (Button) v.findViewById(R.id.trolley);
-
-        trolley.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               Intent i = new Intent(getActivity(),TrolleyActivity.class);
-                startActivity(i);
-            }
-        });
+//        trolley= (Button) v.findViewById(R.id.trolley);
+//
+//        trolley.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//               Intent i = new Intent(getActivity(),TrolleyActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
         return v;
     }
