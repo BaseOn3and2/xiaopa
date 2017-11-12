@@ -1,6 +1,7 @@
 package com.base.xiaopa.activitys;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
@@ -14,8 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.base.xiaopa.db.User;
 import com.xiaopa.android.R;
 
+import cn.bmob.v3.BmobSMS;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.LogInListener;
+import cn.bmob.v3.listener.QueryListener;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 
@@ -27,6 +34,7 @@ public class RegisterActivity extends Fragment implements View.OnClickListener{
     private EditText code;
     private EditText Tel;
     String mPhone;
+
     View v;
 
     EventHandler eventHandler;
@@ -68,12 +76,41 @@ public class RegisterActivity extends Fragment implements View.OnClickListener{
      */
     private boolean getCode() {
         new MyCountDownTimer(60*1000,1000);
+        mPhone=Tel.getText().toString();  //获取手机号
+        BmobSMS.requestSMSCode(mPhone,"123",new QueryListener<Integer>(){
+            @Override
+            public void done(Integer integer, BmobException e) {
+                if(e==null) {
+                    Toast.makeText(getContext(), "验证码发送成功!", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getContext(), "验证码发送失败!\n" + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         return true;
     }
     /**
      * 提交验证码
      */
     private void submitCode() {
+       String str=code.getText().toString();  //获取验证码
+        BmobUser.signOrLoginByMobilePhone(mPhone, str, new LogInListener<User>() {
+            @Override
+            public void done(User user, BmobException e) {
+                if(user!=null){
+                    Toast.makeText(getContext(),"注册成功！",Toast.LENGTH_LONG).show();
+                    Intent i=new Intent(getContext(),MainActivity.class);
+                    startActivity(i);
+
+                }else{
+                    Toast.makeText(getContext(),"注册失败!\n"+e.getMessage(),Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
 
     }
 

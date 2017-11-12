@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.base.xiaopa.db.User;
 import com.base.xiaopa.util.LoginHttpUtils;
 import com.base.xiaopa.util.UserInfoUtil;
 import com.mob.tools.utils.UIHandler;
@@ -30,6 +31,8 @@ import com.xiaopa.android.R;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
@@ -158,12 +161,27 @@ public class LoginActivity extends Fragment implements View.OnClickListener
         password = et_password.getText().toString().trim();
         isrem = cd_rem.isChecked();
         //判断用户名及密码是否为空，不为空则请求服务器
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+        /*if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             Toast.makeText(mContext, "用户名或者密码不能为空，请重新输入", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         //以POST方式请求服务器
-        LoginHttpUtils.requestNetForPostLogin(handler, username, password);
+      //  LoginHttpUtils.requestNetForPostLogin(handler, username, password);
+        User user=new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.login(new SaveListener<User>() {
+            @Override
+            public void done(User user, BmobException e) {
+                if(e==null){
+                    Toast.makeText(getContext(),"登录成功!",Toast.LENGTH_LONG).show();
+                    Intent i=new Intent(getContext(),MainActivity.class);
+                    startActivity(i);
+                }else{
+                    Toast.makeText(getContext(),"登录失败!\n"+e.getMessage(),Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 

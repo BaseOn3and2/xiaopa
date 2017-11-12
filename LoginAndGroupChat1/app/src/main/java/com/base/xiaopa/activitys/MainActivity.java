@@ -17,12 +17,19 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.base.xiaopa.db.User;
 import com.base.xiaopa.view.SlidingMenu;
 import com.xiaopa.android.R;
 
 import java.util.ArrayList;
+
+import cn.bmob.sms.BmobSMS;
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -49,6 +56,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 //        mMenu =(SlidingMenu)findViewById(R.id.id_menu);
         fragmentpage();
 

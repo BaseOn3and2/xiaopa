@@ -13,12 +13,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.base.xiaopa.db.User;
 import com.xiaopa.android.R;
 
 
 import java.util.ArrayList;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by Ivan on 2017/11/8.
@@ -35,6 +41,8 @@ public class Log_RegActivity extends FragmentActivity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
+        //初始化SDK
+        Bmob.initialize(this,"a726b4b77fd79e10dadd5eec1b849975");
         fragmentpage();
 
     }
